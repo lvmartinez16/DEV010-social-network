@@ -1,0 +1,130 @@
+* {
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: url(FONDO.jpg) no-repeat;
+    /* opacity: 50%; */
+    background-position: center;
+    background-size: cover;
+}
+
+/* se agrega un cuadro blanco de fondo para resaltar la parte del inico  */
+.contenedor {
+    position: relative;
+    width: 400px;
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 2px solid rgb(255, 255, 255, .6);
+    height: 280px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+/* damos diseño a nuestro titulo  */
+.contenedor h1 {
+    font-size: 2.3rem;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 44px 0;
+}
+
+.input-contenedor {
+
+    position: relative;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #fff;
+}
+
+
+.input-contenedor input:focus~label,
+.input-contenedor input:valid~label {
+    top: -15px;
+    font-size: 0.85rem;
+    /* Cambiar el tamaño del texto cuando se desplace hacia arriba */
+    color: hsl(0, 0%, 100%);
+    /* Cambiar el color del texto cuando se desplace hacia arriba */
+}
+
+.input-contenedor label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    font-size: 1rem;
+    color: #fff;
+    pointer-events: none;
+    /* Evitar que el label interfiera con la interacción del input */
+    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+    /* Animación suave */
+}
+
+.input-contenedor input {
+    width: 100%;
+    height: 50%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 30px 0 20px;
+    color: #fff;
+}
+
+.input-contenedor i {
+    position: absolute;
+    color: #fff;
+    font-size: 1.6rem;
+    top: 32px;
+    right: 5px;
+}
+
+button {
+    width: 100%;
+    height: 45px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: .4s;
+    align-items: center;
+}
+
+button:hover {
+    opacity: .9;
+}
+
+/* Estilo para el span que contiene la imagen y el texto */
+button span {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para la imagen */
+.imgbuttoniniciar {
+    max-width: 23px;
+    /* Ajusta el tamaño de la imagen según tus preferencias */
+    margin-right: 26px;
+    /* Espacio entre la imagen y el texto */
+    margin-left: 22px;
+}
+.pagina2{
+    background-color: black;
+    display: none;
+}
+
+p{
+    text-align: center;
+    padding: 8px 4px 40px 10px;
+    color: #fff;
+
+}
