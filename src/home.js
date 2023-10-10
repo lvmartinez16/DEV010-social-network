@@ -1,4 +1,4 @@
-/ file main.js finished
+// file main.js finished
 function home(navigateTo) {
   const section = document.createElement('section');
   section.setAttribute('id', 'inicio');
@@ -9,9 +9,9 @@ function home(navigateTo) {
   const imgBtn = document.createElement('img');
   imgBtn.setAttribute('class', 'imgbuttoniniciar');
   imgBtn.setAttribute('src', 'https://cdn-icons-png.flaticon.com/256/2875/2875404.png');
-  imgBtn.setAttribute('alt', 'iniciar sesion con google');
+  //imgBtn.setAttribute('alt', 'iniciar sesion con google');
   const h1 = document.createElement('h1');
-  h1.textContent = 'Inicio de sesión';
+  h1.textContent = 'Social Network Travel';
   const p = document.createElement('p');
   p.textContent = '“Nunca serás demasiado viejo para hacer del resto de tu vida lo mejor de tu vida”';
   buttonGoogle.addEventListener('click', () => {
