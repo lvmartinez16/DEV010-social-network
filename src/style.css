@@ -31,12 +31,14 @@ section {
 }
 
 /* damos diseño a nuestro titulo  */
+
 .contenedor h1 {
     font-size: 2.3rem;
-    color: #fff;
+    color: #232323;
     text-align: center;
     padding: 10px 0 44px 0;
-}
+} 
+
 
 .input-contenedor {
 
@@ -87,8 +89,8 @@ section {
 }
 
 button {
-    width: 100%;
-    height: 45px;
+    margin-left: 15%;
+    height: 40px;
     border-radius: 40px;
     background: #fff;
     border: none;
@@ -104,18 +106,19 @@ button:hover {
 }
 
 /* Estilo para el span que contiene la imagen y el texto */
-button span {
-    display: flex;
+/* button span {
+    padding: 11px -14px -8px -2px;
     align-items: center;
-}
+} */
 
 /* Estilo para la imagen */
 .imgbuttoniniciar {
-    max-width: 23px;
+    padding: 2px 8px 0px 12px;
+    max-width: 15px;
     /* Ajusta el tamaño de la imagen según tus preferencias */
-    margin-right: 26px;
+    margin-right: 5px;
     /* Espacio entre la imagen y el texto */
-    margin-left: 22px;
+    /* margin-left: 13px; */
 }
 .pagina2{
     background-color: black;
@@ -128,3 +131,11 @@ p{
     color: #fff;
 
 }
+@media screen and (max-width: 640px) { 
+
+ .column {
+
+    width: 50%;
+
+}}
+
