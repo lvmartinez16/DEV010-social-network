@@ -1,4 +1,4 @@
-/ file main.js finished
+// file main.js finished
 function home(navigateTo) {
   const section = document.createElement('section');
   section.setAttribute('id', 'inicio');

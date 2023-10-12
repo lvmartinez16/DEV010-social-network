@@ -1,7 +1,7 @@
 // file main.js finished
-import home from './lib/home.js';
-import wall from './lib/wall.js';
-import error from './lib/error.js';
+import home from './home.js';
+import wall from './wall.js';
+import error from './error.js';
 
 const routes = [
   { path: '/', component: home },
