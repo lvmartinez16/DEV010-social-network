@@ -1,3 +1,4 @@
+import { iniciarSesionGoogle } from './firebase';
 // file main.js finished
 function home(navigateTo) {
   const section = document.createElement('section');
@@ -11,17 +12,26 @@ function home(navigateTo) {
   imgBtn.setAttribute('src', 'https://cdn-icons-png.flaticon.com/256/2875/2875404.png');
   imgBtn.setAttribute('alt', 'iniciar sesion con google');
   const h1 = document.createElement('h1');
-  h1.textContent = 'Social Network Travel';
+  h1.textContent = 'Inicio de sesión';
   const p = document.createElement('p');
   p.textContent = '“Nunca serás demasiado viejo para hacer del resto de tu vida lo mejor de tu vida”';
   buttonGoogle.addEventListener('click', () => {
-    navigateTo('/wall');
+    // navigateTo('/wall');
+    iniciarSesionGoogle()
+      .catch((error) => console.log(error.message))
+      .then((resp) => {
+        // console.log(resp);
+        if (resp === undefined) {
+          alert('Fallo  inicio de sesión, vuelve a intentarlo');
+        } else {
+          navigateTo('/wall');
+        }
+      });
   });
-  buttonGoogle.append(spanBtn, 'Iniciar sesión con Google ');
+  buttonGoogle.append(spanBtn, 'Iniciar sesión con Google');
   spanBtn.appendChild(imgBtn);
   divContenedor.append(h1, p, buttonGoogle);
   section.appendChild(divContenedor);
   return section;
 }
-// eslint-disable-next-line eol-last
 export default home;
