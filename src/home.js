@@ -12,21 +12,21 @@ function home(navigateTo) {
   imgBtn.setAttribute('src', 'https://cdn-icons-png.flaticon.com/256/2875/2875404.png');
   imgBtn.setAttribute('alt', 'iniciar sesion con google');
   const h1 = document.createElement('h1');
-  h1.textContent = 'Inicio de sesión';
+  h1.textContent = 'Social Network Travel';
   const p = document.createElement('p');
   p.textContent = '“Nunca serás demasiado viejo para hacer del resto de tu vida lo mejor de tu vida”';
   buttonGoogle.addEventListener('click', () => {
     // navigateTo('/wall');
     iniciarSesionGoogle()
-      .catch((error) => console.log(error.message))
       .then((resp) => {
-        // console.log(resp);
-        if (resp === undefined) {
-          alert('Fallo  inicio de sesión, vuelve a intentarlo');
-        } else {
-          navigateTo('/wall');
-        }
-      });
+        console.log(resp);
+        // if (resp === undefined) {
+        //   alert('Falló inicio de sesión, vuelve a intentarlo');
+        // } else {
+        navigateTo('/wall');
+        // }
+      })
+      .catch((error) => console.log(error.message));
   });
   buttonGoogle.append(spanBtn, 'Iniciar sesión con Google');
   spanBtn.appendChild(imgBtn);
