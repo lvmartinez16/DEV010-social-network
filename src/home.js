@@ -23,7 +23,7 @@ function home(navigateTo) {
         // if (resp === undefined) {
         //   alert('Falló inicio de sesión, vuelve a intentarlo');
         // } else {
-        navigateTo('/wall');
+        navigateTo('/');
         // }
       })
       .catch((error) => console.log(error.message));
