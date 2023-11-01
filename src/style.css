@@ -29,6 +29,17 @@ section {
     justify-content: center;
     align-items: center; */
 }
+.contenedorWall {
+    position: relative;
+    width: 700px;
+     backdrop-filter: blur(6px); 
+    border-radius: 20px;
+    border: 2px solid rgb(37 32 32 / 60%);
+    height: 600px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
 
 /* damos diseño a nuestro titulo  */
 
