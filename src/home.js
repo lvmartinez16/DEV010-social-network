@@ -6,6 +6,7 @@ function home(navigateTo) {
   const divContenedor = document.createElement('div');
   divContenedor.setAttribute('class', 'contenedor');
   const buttonGoogle = document.createElement('button');
+  buttonGoogle.setAttribute('class', 'buttonGoogle');
   const spanBtn = document.createElement('span');
   const imgBtn = document.createElement('img');
   imgBtn.setAttribute('class', 'imgbuttoniniciar');
