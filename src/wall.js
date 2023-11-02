@@ -22,7 +22,7 @@ function wall() {
   btnpost.addEventListener('click', () => {
     const newPost = {
       date: new Date(),
-      text: txtCrearpost.value,
+      text: txtCrearpost.value, // Corrected the variable name here
     };
 
     createPost(newPost)
@@ -33,6 +33,22 @@ function wall() {
         console.log(err);
       });
   });
+
+  /* btnpost.addEventListener('click', () => {
+    const newPost = {
+      date: new Date(),
+      text: txtCrearpost.value,
+    };
+});
+
+    createPost(newPost)
+      .then(() => {
+        console.log('fue bien');
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }); */
   // crear un objeto donde una propieda guarde ese texto
   // ejecutar createpost con ese objeto cmo argumento
   // then y catch
