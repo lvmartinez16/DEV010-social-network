@@ -40,7 +40,7 @@ function wall() {
   });
   // crear un objeto donde una propieda guarde ese texto
   // ejecutar createpost con ese objeto cmo argumento
-  // then y catch
+  // then y catch prueba
 
   return section;
 }
