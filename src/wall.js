@@ -2,7 +2,7 @@
 
 
 // file login finished
- import { createPost  } from './firestore';
+import { createPost } from './firestore';
 
 function wall() {
   const section = document.createElement('section');
@@ -12,10 +12,10 @@ function wall() {
   const crearPost = document.createElement('textarea');
   crearPost.placeholder = 'escribe aqui tu post';
   const btnpost = document.createElement('button');
-  
-  btnpost.innerText = 'Enviar';
+  // Configura el texto del botón
+  btnpost.innerText = 'Haz clic en mí';
   const postCreado = document.createElement('textarea');
-   postCreado.textContent = ''; 
+  /* postCreado.textContent = ''; */
 
   divContenedor.append(crearPost, btnpost, postCreado);
   section.appendChild(divContenedor);
@@ -38,13 +38,12 @@ function wall() {
       .catch((err) => {
         console.log(err, 'error al crear post');
       });
-    });
-  
-    
-        });
-   
+  });
+  // crear un objeto donde una propieda guarde ese texto
+  // ejecutar createpost con ese objeto cmo argumento
+  // then y catch prueba
+
   return section;
-  }
-  
-  export default wall;
-   
+}
+
+export default wall;
