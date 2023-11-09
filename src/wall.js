@@ -1,7 +1,7 @@
 // import { createPost, updatePost } from './firestore';
 
 // file login finished
-import { createPost, obtenerPosts} from './firestore';
+import { createPost, obtenerPosts } from './firestore';
 
 function wall() {
   const section = document.createElement('section');
@@ -33,6 +33,11 @@ function wall() {
 
         // Limpia el campo crearpost
         crearPost.value = '';
+
+        // Llama a obtenerPosts para actualizar la vista con los posts más recientes
+        obtenerPosts((posts) => {
+          console.log('Posts actualizados:', posts);
+        });
       })
       .catch((err) => {
         console.log(err, 'error al crear post');
