@@ -11,7 +11,7 @@ import { app } from './firebase';
 /* import { onSnapshot, collection } from 'firebase/firestore';
 import { db } from 'firebase';
 
-const db = getFirestore(app); // Obtenga una referencia a la base de datos de Firestore:
+const db = getFirestore(app); // Obtenga una referencia a la base de datoss de Firestore:
 // crear una nueva publicación en la base de datos Firestore.
 export const createPost = (obj) => addDoc(collection(db, 'post'), {
   ...obj,
