@@ -1,7 +1,7 @@
 /* eslint-disable new-cap */
 /* eslint-disable no-undef */
 // file login finished
-import { createPost } from './firestore';
+import { createPost, obtenerPosts} from './firestore';
 
 function wall() {
   const section = document.createElement('section');
@@ -12,7 +12,7 @@ function wall() {
   crearPost.placeholder = 'escribe aqui tu post';
   const btnpost = document.createElement('button');
   // Configura el texto del botón
-  btnpost.innerText = 'Haz clic en mí';
+  btnpost.innerText = 'Enviar';
   const postCreado = document.createElement('textarea');
   /* postCreado.textContent = ''; */
 
