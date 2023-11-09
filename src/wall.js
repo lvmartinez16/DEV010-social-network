@@ -1,5 +1,4 @@
-//import { createPost, updatePost } from './firestore';
-
+// import { createPost, updatePost } from './firestore';
 
 // file login finished
 import { createPost } from './firestore';
@@ -13,24 +12,25 @@ function wall() {
   crearPost.placeholder = 'escribe aqui tu post';
   const btnpost = document.createElement('button');
   // Configura el texto del botón
-  btnpost.innerText = 'Haz clic en mí';
-  const postCreado = document.createElement('textarea');
+  btnpost.innerText = 'Enviar';
+
+  /*  const postCreado = document.createElement('textarea'); */
   /* postCreado.textContent = ''; */
 
-  divContenedor.append(crearPost, btnpost, postCreado);
+  divContenedor.append(crearPost, btnpost);
   section.appendChild(divContenedor);
 
   btnpost.addEventListener('click', () => {
     const newPost = {
       date: new Date(),
-      text: postCreado.value,
+      // text: postCreado.value,
     };
 
     createPost(newPost)
       .then((resultado) => {
         console.log(resultado, 'post creado');
         // Actualiza el contenido de postCreado con el contenido de crearpost
-        postCreado.textContent = crearPost.value;
+        // postCreado.textContent = crearPost.value;
 
         // Limpia el campo crearpost
         crearPost.value = '';
