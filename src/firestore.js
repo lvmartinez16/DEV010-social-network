@@ -28,3 +28,4 @@ export const obtenerPosts = (callback) => {
     callback(posts);
   });
 };
+   mslmals 
