@@ -1,6 +1,6 @@
-/* eslint-disable new-cap */
-/* eslint-disable no-undef */
-// file login finished
+// import { createPost, updatePost } from './firestore';
+
+import { async } from 'regenerator-runtime';
 import { createPost, obtenerPosts } from './firestore';
 
 function wall() {
@@ -13,16 +13,18 @@ function wall() {
   const btnpost = document.createElement('button');
   // Configura el texto del botón
   btnpost.innerText = 'Enviar';
-  const postCreado = document.createElement('textarea');
+  const postCreado = document.createElement('div');
+
   /* postCreado.textContent = ''; */
 
   divContenedor.append(crearPost, btnpost, postCreado);
   section.appendChild(divContenedor);
 
-  btnpost.addEventListener('click', () => {
+  btnpost.addEventListener('click', async () => {
     const newPost = {
       date: new Date(),
       text: crearPost.value, // guarda lo que el usuario escribio
+
     };
 
     createPost(newPost)
@@ -35,8 +37,12 @@ function wall() {
         crearPost.value = '';
 
         // Llama a obtenerPosts para actualizar la vista con los posts más recientes
+        // obtenerPosts(callback, unElement)
+        // el elemento tiene que ser un lugar donde se dibujen los posts
+        // pueden crear otroElemento que este dentro de divContenedor
         obtenerPosts((posts) => {
           console.log('Posts actualizados:', posts);
+          // tiene que hacer lo mismo que hacian en DL dibujar tarjetas
         });
       })
       .catch((err) => {
