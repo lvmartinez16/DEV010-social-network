@@ -8,7 +8,7 @@ const db = getFirestore(app); // Obtenga una referencia a la base de datoss de F
 export const createPost = (obj) => addDoc(collection(db, 'post'), {
   ...obj,
 });
-export const obtenerPosts = (callback, containerElement) => {
+export const obtenerPosts = (callback) => {
   const postCollection = collection(db, 'post');
   onSnapshot(postCollection, (snapshot) => {
     const posts = [];
@@ -17,6 +17,6 @@ export const obtenerPosts = (callback, containerElement) => {
     });
 
     // Llama a la función de devolución de llamada con los posts y el contenedor HTML
-    callback(posts, containerElement);
+    callback(posts);
   });
 };
