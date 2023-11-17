@@ -14,7 +14,7 @@ function wall() {
   const postCreado = document.createElement('div');
   postCreado.className = 'sesionPost';
 
-  divContenedor.append(crearPost, btnpost, postCreado);
+  divContenedor.append(crearPost, btnPost, postCreado);
   sectionW.appendChild(divContenedor);
 
   function mostrarPosts(posts) {

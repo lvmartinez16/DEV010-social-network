@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import {
-  getFirestore, collection, addDoc, onSnapshot, getDocs,
+  getFirestore, collection, addDoc, onSnapshot,
 } from 'firebase/firestore';
 import { app } from './firebase';
 
