@@ -4,8 +4,7 @@
     padding: 0;
 
 }
-
-section {
+.sectionH {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,13 +16,20 @@ section {
     background-size: cover;
 }
 
+sectionW{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+min-height: 100vh;
+background-color: #f07d12;
+
+}
 /* se agrega un cuadro blanco de fondo para resaltar la parte del inico  */
 .contenedor {
     position: relative;
     width: 450px;
     backdrop-filter: blur(30px);
-    border-radius: 20px;
-    border: 2px solid rgb(37 32 32 / 60%);
     height: 300px;
     /* display: flex;
     justify-content: center;
@@ -33,8 +39,6 @@ section {
     position: relative;
     width: 700px;
      backdrop-filter: blur(6px); 
-    border-radius: 20px;
-    border: 2px solid rgb(37 32 32 / 60%);
     height: 600px;
     /* display: flex;
     justify-content: center;
@@ -54,7 +58,7 @@ section {
 .input-contenedor {
 
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border-bottom: 2px solid #fcf7f7;
 }
 
@@ -142,7 +146,26 @@ p{
     color: #fff;
 
 }
+.post {
+    background-color: #f0f0f0; 
+    padding: 10px;
+    margin-bottom: 10px; 
+    border-radius: 5px; 
+  }
 
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+.btnPost{
+    margin-left: 93%;
+    height: 41px;
+    background: #ee7474;
+    border: none;
+    border-radius: 10%;
+}
 
 
 @media screen and (max-width: 640px) { 

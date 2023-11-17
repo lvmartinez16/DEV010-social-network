@@ -1,58 +1,62 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-unused-vars */
-// import { createPost, updatePost } from './firestore';
-
-import { async } from 'regenerator-runtime';
 import { createPost, obtenerPosts } from './firestore';
 
 function wall() {
-  const section = document.createElement('section');
+  const sectionW = document.createElement('section');
+  sectionW.className = 'sectionW';
   const divContenedor = document.createElement('div');
   divContenedor.setAttribute('class', 'contenedorWall');
 
   const crearPost = document.createElement('textarea');
-  crearPost.placeholder = 'escribe aqui tu post';
-  const btnpost = document.createElement('button');
-  // Configura el texto del botón
-  btnpost.innerText = 'Enviar';
+  crearPost.placeholder = 'Escribe aquí tu post';
+  const btnPost = document.createElement('button');
+  btnPost.innerText = 'Enviar';
+  btnPost.className = 'btnPost';
   const postCreado = document.createElement('div');
+  postCreado.className = 'sesionPost';
 
-  /* postCreado.textContent = ''; */
+  divContenedor.append(crearPost, btnPost, postCreado);
+  sectionW.appendChild(divContenedor);
 
-  divContenedor.append(crearPost, btnpost, postCreado);
-  section.appendChild(divContenedor);
+  function mostrarPosts(posts) {
+    postCreado.innerHTML = ''; // Clear existing posts
 
-  btnpost.addEventListener('click', async () => {
+    // Reverse the order of posts to display the newest ones first
+    posts.reverse();
+
+    posts.forEach((post) => {
+      const postElement = document.createElement('div');
+      postElement.className = 'post';
+      postElement.textContent = `${post.text} - ${post.date}`;
+      postCreado.appendChild(postElement);
+    });
+  }
+  // Event listener for the "Enviar" button
+  btnPost.addEventListener('click', () => {
     const newPost = {
       date: new Date(),
-      text: crearPost.value, // guarda lo que el usuario escribio
-
+      text: crearPost.value,
     };
 
     createPost(newPost)
-      .then((resultado) => {
-        console.log(resultado, 'post creado');
-        // Actualiza el contenido de postCreado con el contenido de crearpost
-        postCreado.textContent = crearPost.value;
-
-        // Limpia el campo crearpost
+      .then(() => {
         crearPost.value = '';
-
-        // Llama a obtenerPosts para actualizar la vista con los posts más recientes
-        // obtenerPosts(callback, unElement)
-        // el elemento tiene que ser un lugar donde se dibujen los posts
-        // pueden crear otroElemento que este dentro de divContenedor
         obtenerPosts((posts) => {
-          console.log('Posts actualizados:', posts);
-          // tiene que hacer lo mismo que hacian en DL dibujar tarjetas
+          mostrarPosts(posts);
         });
       })
       .catch((err) => {
-        console.log(err, 'error al crear post');
+        console.error(err, 'Error al crear post');
       });
   });
 
-  return section;
+  // Initial rendering of posts when the page loads
+  obtenerPosts((posts) => {
+    mostrarPosts(posts);
+  });
+
+  return sectionW;
 }
 
 export default wall;

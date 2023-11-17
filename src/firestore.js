@@ -11,7 +11,7 @@ export const createPost = (obj) => addDoc(collection(db, 'post'), {
   dentro de ella estamos utilizando la funcion addDoc que sirve para agregar un documento a la base de
   datos  */
 });
-/* export const guardarTarea = () => getDocs(collection(db, 'post')); */
+/* export const guardarTarea = () => getDocs(collection(db, 'post'));
 /* lo que debe hacer es que utliza el getdocs para poder obtener los documentos de la
 coleccion post en la base de datos */
 
@@ -24,7 +24,6 @@ export const obtenerPosts = (callback, containerElement) => {
         text: doc.data().text,
         date: doc.data().date,
         id: doc.id,
-
       };
       posts.push(post);
       console.log(post);

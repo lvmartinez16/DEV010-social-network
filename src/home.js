@@ -1,8 +1,9 @@
 import { iniciarSesionGoogle } from './firebase';
 // file main.js finished
 function home(navigateTo) {
-  const section = document.createElement('section');
-  section.setAttribute('id', 'inicio');
+  const sectionH = document.createElement('section');
+  sectionH.className = 'sectionH';
+  sectionH.setAttribute('id', 'inicio');
   const divContenedor = document.createElement('div');
   divContenedor.setAttribute('class', 'contenedor');
   const buttonGoogle = document.createElement('button');
@@ -32,7 +33,7 @@ function home(navigateTo) {
   buttonGoogle.append(spanBtn, 'Iniciar sesión con Google');
   spanBtn.appendChild(imgBtn);
   divContenedor.append(h1, p, buttonGoogle);
-  section.appendChild(divContenedor);
-  return section;
+  sectionH.appendChild(divContenedor);
+  return sectionH;
 }
 export default home;
