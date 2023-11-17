@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-unused-vars */
 // import { createPost, updatePost } from './firestore';
 
 import { async } from 'regenerator-runtime';
@@ -49,9 +51,6 @@ function wall() {
         console.log(err, 'error al crear post');
       });
   });
-  // crear un objeto donde una propieda guarde ese texto
-  // ejecutar createpost con ese objeto cmo argumento
-  // then y catch prueba
 
   return section;
 }
