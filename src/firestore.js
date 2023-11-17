@@ -25,8 +25,9 @@ export const obtenerPosts = (callback, containerElement) => {
         id: doc.id,
       };
       posts.push(post);
-      //console.log(post);
+      console.log(post);
     });
+
     callback(posts, containerElement);
   });
 };
