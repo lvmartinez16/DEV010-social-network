@@ -1,53 +1,58 @@
-/* eslint-disable new-cap */
-/* eslint-disable no-undef */
-// file login finished
 import { createPost, obtenerPosts } from './firestore';
 
 function wall() {
-  const section = document.createElement('section');
+  const sectionW = document.createElement('section');
+  sectionW.className = 'sectionW';
   const divContenedor = document.createElement('div');
   divContenedor.setAttribute('class', 'contenedorWall');
 
   const crearPost = document.createElement('textarea');
-  crearPost.placeholder = 'escribe aqui tu post';
-  const btnpost = document.createElement('button');
-  // Configura el texto del botón
-  btnpost.innerText = 'Enviar';
-  const postCreado = document.createElement('textarea');
-  /* postCreado.textContent = ''; */
+  crearPost.placeholder = 'Escribe aquí tu post';
+  const btnPost = document.createElement('button');
+  btnPost.innerText = 'Enviar';
+  btnPost.className = 'btnPost';
+  const postCreado = document.createElement('div');
 
-  divContenedor.append(crearPost, btnpost, postCreado);
-  section.appendChild(divContenedor);
+  divContenedor.append(crearPost, btnPost, postCreado);
+  sectionW.appendChild(divContenedor);
 
-  btnpost.addEventListener('click', () => {
+  // Function mostrar post
+  // Function mostrar post
+  // Function mostrar post
+  function mostrarPost(posts) {
+    postCreado.innerHTML = '';
+    posts.forEach((post) => {
+      const postElement = document.createElement('div');
+      postElement.className = 'post';
+      postElement.textContent = `${post.text}`;
+      postCreado.insertBefore(postElement, postCreado.firstChild);
+    });
+  }
+
+  btnPost.addEventListener('click', () => {
     const newPost = {
       date: new Date(),
-      text: crearPost.value, // guarda lo que el usuario escribio
+      text: crearPost.value,
     };
 
     createPost(newPost)
-      .then((resultado) => {
-        console.log(resultado, 'post creado');
-        // Actualiza el contenido de postCreado con el contenido de crearpost
-        postCreado.textContent = crearPost.value;
-
-        // Limpia el campo crearpost
+      .then(() => {
         crearPost.value = '';
-
-        // Llama a obtenerPosts para actualizar la vista con los posts más recientes
         obtenerPosts((posts) => {
-          console.log('Posts actualizados:', posts);
+          mostrarPost(posts); // lista de post actualizada
         });
       })
       .catch((err) => {
-        console.log(err, 'error al crear post');
+        console.error(err, 'Error al crear post');
       });
   });
-  // crear un objeto donde una propieda guarde ese texto
-  // ejecutar createpost con ese objeto cmo argumento
-  // then y catch prueba
 
-  return section;
+  //
+  obtenerPosts((posts) => {
+    mostrarPost(posts);
+  });
+
+  return sectionW;
 }
 
 export default wall;

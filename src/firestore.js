@@ -1,22 +1,32 @@
+/* eslint-disable max-len */
 import {
-  getFirestore, collection, addDoc, onSnapshot,
+  getFirestore, collection, addDoc, onSnapshot, getDocs,
 } from 'firebase/firestore';
 import { app } from './firebase';
 
-const db = getFirestore(app); // Obtenga una referencia a la base de datoss de Firestore:
-// crear una nueva publicación en la base de datos Firestore.
+const db = getFirestore(app);
 export const createPost = (obj) => addDoc(collection(db, 'post'), {
-  ...obj,
+  ...obj, /* exporta la funcion llamada createpost que recibe como objecto un parametro
+  dentro de ella estamos utilizando la funcion addDoc que sirve para agregar un documento a la base de
+  datos  */
 });
-export const obtenerPosts = (callback) => {
+/* export const guardarTarea = () => getDocs(collection(db, 'post'));
+/* lo que debe hacer es que utliza el getdocs para poder obtener los documentos de la
+coleccion post en la base de datos */
+
+export const obtenerPosts = (callback, containerElement) => {
   const postCollection = collection(db, 'post');
   onSnapshot(postCollection, (snapshot) => {
     const posts = [];
     snapshot.forEach((doc) => {
-      posts.push({ id: doc.id, ...doc.data() });
+      const post = {
+        text: doc.data().text,
+        date: doc.data().date,
+        id: doc.id,
+      };
+      posts.push(post);
+      //console.log(post);
     });
-
-    // Llama a la función de devolución de llamada con los posts y el contenedor HTML
-    callback(posts);
+    callback(posts, containerElement);
   });
 };
