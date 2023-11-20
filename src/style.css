@@ -1,178 +1,184 @@
-* {
-    font-family: 'poppins', sans-serif;
-    margin: 0;
-    padding: 0;
+ * {
+     font-family: 'poppins', sans-serif;
+     margin: 0;
+     padding: 0;
 
-}
-.sectionH {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
-    background: url(FONDO.jpg) no-repeat;
-    /* opacity: 50%; */
-    background-position: center;
-    background-size: cover;
+ }
+
+ .sectionH {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     min-height: 100vh;
+     background: url(FONDO.jpg) no-repeat;
+     /* opacity: 50%; */
+     background-position: center;
+     background-size: cover;
+ }
+
+ .sectionW {
+    
+    background-color: #ece8e4;
 }
 
-sectionW{
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100%;
-min-height: 100vh;
-background-color: #f07d12;
 
-}
-/* se agrega un cuadro blanco de fondo para resaltar la parte del inico  */
-.contenedor {
-    position: relative;
-    width: 450px;
-    backdrop-filter: blur(30px);
-    height: 300px;
-    /* display: flex;
+ /* se agrega un cuadro blanco de fondo para resaltar la parte del inico  */
+ .contenedor {
+     position: relative;
+     width: 450px;
+     backdrop-filter: blur(30px);
+     height: 300px;
+     /* display: flex;
     justify-content: center;
     align-items: center; */
-}
-.contenedorWall {
-    position: relative;
-    width: 700px;
-     backdrop-filter: blur(6px); 
+ }
+
+ .contenedorWall {
    
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-}
+     margin: 10px;
+     justify-content: center;
+     align-items: center;
+ }
 
-/* damos diseño a nuestro titulo  */
+ /* damos diseño a nuestro titulo  */
 
-.contenedor h1 {
-    font-size: 2.3rem;
-    color:#f07d12;
-    text-align: center;
-    padding: 10px 0 44px 0;
-} 
-
-
-.input-contenedor {
-
-    position: relative;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #fcf7f7;
-}
+ .contenedor h1 {
+     font-size: 2.3rem;
+     color: #f07d12;
+     text-align: center;
+     padding: 10px 0 44px 0;
+ }
 
 
-.input-contenedor input:focus~label,
-.input-contenedor input:valid~label {
-    top: -15px;
-    font-size: 0.85rem;
-    /* Cambiar el tamaño del texto cuando se desplace hacia arriba */
-    color: hsl(0, 0%, 100%);
-    /* Cambiar el color del texto cuando se desplace hacia arriba */
-}
+ .input-contenedor {
 
-.input-contenedor label {
-    position: absolute;
-    top: 15px;
-    left: 0;
-    font-size: 1rem;
-    color: #fff;
-    pointer-events: none;
-    /* Evitar que el label interfiera con la interacción del input */
-    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
-    /* Animación suave */
-}
+     position: relative;
+     margin-bottom: 30px;
+     border-bottom: 2px solid #fcf7f7;
+ }
 
-.input-contenedor input {
-    width: 100%;
-    height: 50%;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    padding: 30px 0 20px;
-    color: #fff;
-}
 
-.input-contenedor i {
-    position: absolute;
-    color: #fff;
-    font-size: 1.6rem;
-    top: 32px;
-    right: 5px;
-}
+ .input-contenedor input:focus~label,
+ .input-contenedor input:valid~label {
+     top: -15px;
+     font-size: 0.85rem;
+     /* Cambiar el tamaño del texto cuando se desplace hacia arriba */
+     color: hsl(0, 0%, 100%);
+     /* Cambiar el color del texto cuando se desplace hacia arriba */
+ }
 
-.buttonGoogle {
-    margin-left: 16%;
-    height: 48px;
-    border-radius: 45px;
-    background: #fff;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: .4s;
-    align-items: center;
-}
+ .input-contenedor label {
+     position: absolute;
+     top: 15px;
+     left: 0;
+     font-size: 1rem;
+     color: #fff;
+     pointer-events: none;
+     /* Evitar que el label interfiera con la interacción del input */
+     transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+     /* Animación suave */
+ }
 
-button:hover {
-    opacity: .9;
-}
+ .input-contenedor input {
+     width: 100%;
+     height: 50%;
+     background-color: transparent;
+     border: none;
+     outline: none;
+     font-size: 1rem;
+     padding: 30px 0 20px;
+     color: #fff;
+ }
 
-/* Estilo para el span que contiene la imagen y el texto */
-/* button span {
+ .input-contenedor i {
+     position: absolute;
+     color: #fff;
+     font-size: 1.6rem;
+     top: 32px;
+     right: 5px;
+ }
+
+ .buttonGoogle {
+     margin-left: 26%;
+     height: 40px;
+     border-radius: 8px;
+     background: #fff;
+     border: none;
+     font-weight: bold;
+     cursor: pointer;
+     /* font-size: 1rem; */
+     /* transition: .4s; */
+     align-items: center;
+ }
+
+
+ button:hover {
+     opacity: .9;
+ }
+
+ /* Estilo para el span que contiene la imagen y el texto */
+ /* button span {
     padding: 11px -14px -8px -2px;
     align-items: center;
 } */
 
-/* Estilo para la imagen */
-.imgbuttoniniciar {
-    padding: 2px 8px 0px 12px;
-    max-width: 15px;
-    /* Ajusta el tamaño de la imagen según tus preferencias */
-    margin-right: 5px;
-    /* Espacio entre la imagen y el texto */
-    /* margin-left: 13px; */
-}
-.pagina2{
-    background-color: black;
-    display: none;
-}
+ /* Estilo para la imagen */
+ .imgbuttoniniciar {
+     padding: 2px 8px 0px 12px;
+     max-width: 15px;
+     /* Ajusta el tamaño de la imagen según tus preferencias */
+     margin-right: 5px;
+     /* Espacio entre la imagen y el texto */
+     /* margin-left: 13px; */
+ }
 
-p{
-    text-align: center;
-    padding: 8px 4px 40px 10px;
-    color: #fff;
+ .pagina2 {
+     background-color: black;
+     display: none;
+ }
 
-}
-h6 {
-    background-color: #f0f0f0; 
+ p {
+     text-align: center;
+     padding: 8px 4px 40px 10px;
+     color: #fff;
+
+ }
+
+ 
+ h6 {
+    background-color: #f0f0f0;
     padding: 10px;
-    margin-bottom: 10px; 
-    border-radius: 5px; 
-  }
-
-
-textarea {
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    width: 40%;
 }
-.btnPost{
-    margin-left: 93%;
-    height: 41px;
+
+
+
+
+ textarea {
+     width: 59%;
+     height: 200px;
+     box-sizing: border-box;
+     /* align-items: center; */
+ }
+
+
+
+ .btnPost {
+    margin-left: 54%;
+    height: 38px;
     background: #ee7474;
-    border: none;
-    border-radius: 10%;
+    /* border: none; */
+    border-radius: 14%;
 }
 
+ @media screen and (max-width: 640px) {
 
-@media screen and (max-width: 640px) { 
+     .column {
 
- .column {
+         width: 50%;
 
-    width: 50%;
-
-}}
-
+     }
+ }
