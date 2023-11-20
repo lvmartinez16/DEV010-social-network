@@ -39,7 +39,7 @@ background-color: #f07d12;
     position: relative;
     width: 700px;
      backdrop-filter: blur(6px); 
-    height: 600px;
+   
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -146,7 +146,7 @@ p{
     color: #fff;
 
 }
-.post {
+h6 {
     background-color: #f0f0f0; 
     padding: 10px;
     margin-bottom: 10px; 
