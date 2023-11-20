@@ -15,23 +15,23 @@ function wall() {
   btnPost.className = 'btnPost';
   const postCreado = document.createElement('div');
   postCreado.className = 'sesionPost';
-
+  // postCreado.append(obtenerPosts());
   divContenedor.append(crearPost, btnPost, postCreado);
   sectionW.appendChild(divContenedor);
 
-  function mostrarPosts(posts) {
-    postCreado.innerHTML = ''; // Clear existing posts
+  // function mostrarPosts(posts) {
+  //   postCreado.innerHTML = ''; // Clear existing posts
 
-    // Reverse the order of posts to display the newest ones first
-    posts.reverse();
+  //   // Reverse the order of posts to display the newest ones first
+  //   posts.reverse();
 
-    posts.forEach((post) => {
-      const postElement = document.createElement('div');
-      postElement.className = 'post';
-      postElement.textContent = `${post.text} - ${post.date}`;
-      postCreado.appendChild(postElement);
-    });
-  }
+  //   posts.forEach((post) => {
+  //     const postElement = document.createElement('div');
+  //     postElement.className = 'post';
+  //     postElement.textContent = `${post.text} - ${post.date}`;
+  //     postCreado.appendChild(postElement);
+  //   });
+  // }
   // Event listener for the "Enviar" button
   btnPost.addEventListener('click', () => {
     const newPost = {
@@ -42,9 +42,9 @@ function wall() {
     createPost(newPost)
       .then(() => {
         crearPost.value = '';
-        obtenerPosts((posts) => {
-          mostrarPosts(posts);
-        });
+        // obtenerPosts((posts) => {
+        //   mostrarPosts(posts);
+        // });
       })
       .catch((err) => {
         console.error(err, 'Error al crear post');
@@ -52,10 +52,10 @@ function wall() {
   });
 
   // Initial rendering of posts when the page loads
-  obtenerPosts((posts) => {
-    mostrarPosts(posts);
-  });
-
+  // obtenerPosts((posts) => {
+  //   mostrarPosts(posts);
+  // obtenerPosts();
+  sectionW.append(obtenerPosts());
   return sectionW;
 }
 

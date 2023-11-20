@@ -15,7 +15,26 @@ export const createPost = (obj) => addDoc(collection(db, 'post'), {
 /* lo que debe hacer es que utliza el getdocs para poder obtener los documentos de la
 coleccion post en la base de datos */
 
-export const obtenerPosts = (callback, containerElement) => {
+// export const obtenerPosts = (callback, containerElement) => {
+//   const postCollection = collection(db, 'post');
+//   onSnapshot(postCollection, (snapshot) => {
+//     const posts = [];
+//     snapshot.forEach((doc) => {
+//       const post = {
+//         text: doc.data().text,
+//         date: doc.data().date,
+//         id: doc.id,
+//       };
+//       posts.push(post);
+//       console.log(post);
+//     });
+
+//     callback(posts, containerElement);
+//   });
+// };
+
+export const obtenerPosts = () => {
+  const sectionPost = document.createElement('section');
   const postCollection = collection(db, 'post');
   onSnapshot(postCollection, (snapshot) => {
     const posts = [];
@@ -26,9 +45,10 @@ export const obtenerPosts = (callback, containerElement) => {
         id: doc.id,
       };
       posts.push(post);
-      console.log(post);
+      const p = document.createElement('h6');
+      p.textContent = doc.data().text;
+      sectionPost.append(p);
     });
-
-    callback(posts, containerElement);
   });
+  return sectionPost;
 };
