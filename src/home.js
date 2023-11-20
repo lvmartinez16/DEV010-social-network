@@ -18,6 +18,7 @@ function home(navigateTo) {
   const p = document.createElement('p');
   p.textContent = '“Nunca serás demasiado viejo para hacer del resto de tu vida lo mejor de tu vida”';
   buttonGoogle.addEventListener('click', () => {
+    console.log('ok ok');
     // navigateTo('/wall');
     iniciarSesionGoogle()
       .then((resp) => {
