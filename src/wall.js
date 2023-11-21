@@ -1,8 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-unused-vars */
-import { createPost, obtenerPosts } from './firestore';
+import { obtenerPosts } from './firestore';
+import { createPost } from './firebase';
 
-function wall(onNavigate) {
+
+function wall() {
   const sectionW = document.createElement('section');
   sectionW.className = 'sectionW';
   const divContenedor = document.createElement('div');
@@ -20,11 +22,9 @@ function wall(onNavigate) {
   btnPost.id = 'btnPost';
   const postCreado = document.createElement('div');
   postCreado.id = 'sesionPost';
-  // postCreado.append(obtenerPosts());
   divContenedor.append(crearPost, btnPost, postCreado);
   sectionW.appendChild(divContenedor);
 
-  // Event listener for the "Enviar" button
   btnPost.addEventListener('click', () => {
     const newPost = {
       date: new Date(),
@@ -34,18 +34,12 @@ function wall(onNavigate) {
     createPost(newPost)
       .then(() => {
         crearPost.value = '';
-        // obtenerPosts((posts) => {
-        //   mostrarPosts(posts);
-        // });
       })
       .catch((err) => {
         console.error(err, 'Error al crear post');
       });
   });
-  // Initial rendering of posts when the page loads
-  // obtenerPosts((posts) => {
-  //   mostrarPosts(posts);
-  // obtenerPosts();
+
   sectionW.append(obtenerPosts());
   return sectionW;
 }

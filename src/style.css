@@ -1,3 +1,7 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .sectionH {
     display: flex;
     justify-content: center;
@@ -152,13 +156,6 @@ p {
 }
 
 
-h6 {
-    background-color: #f0f0f0;
-    padding: 10px;
-    margin: 8px;
-    border-radius: 5px;
-    width: 40%;
-}
 
 #btnPost {
 
@@ -190,3 +187,17 @@ h6 {
 
     }
 }
+
+
+
+
+.card-db {
+    border: solid #000000 1px;
+    border-radius: 10px;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+

@@ -2,6 +2,9 @@
 
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import {
+  getFirestore, collection, addDoc, query,
+} from 'firebase/firestore';
 
 const provider = new GoogleAuthProvider();
 // TODO: Add SDKs for Firebase products that you want to use
@@ -26,3 +29,8 @@ export const iniciarSesionGoogle = () => {
   const auth = getAuth(app);
   return signInWithPopup(auth, provider);
 };
+const db = getFirestore(app);
+export const refPost = () => query(collection(db, 'post'));
+export const createPost = (obj) => addDoc(collection(db, 'post'), {
+  ...obj,
+});
