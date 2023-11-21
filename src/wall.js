@@ -3,7 +3,6 @@
 import { obtenerPosts } from './firestore';
 import { createPost } from './firebase';
 
-
 function wall() {
   const sectionW = document.createElement('section');
   sectionW.className = 'sectionW';
@@ -33,7 +32,9 @@ function wall() {
 
     createPost(newPost)
       .then(() => {
+        sectionW.innerHTML = ' ';
         crearPost.value = '';
+        obtenerPosts();
       })
       .catch((err) => {
         console.error(err, 'Error al crear post');
@@ -41,6 +42,7 @@ function wall() {
   });
 
   sectionW.append(obtenerPosts());
+
   return sectionW;
 }
 
