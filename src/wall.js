@@ -25,7 +25,6 @@ function wall() {
 
   divContenedor.append(crearPost, btnPost, postCreado);
   sectionW.appendChild(divContenedor);
-  document.addEventListener('DOMContentLoaded', () => { console.log('DOM'); });
   btnPost.addEventListener('click', () => {
     const newPost = {
       date: new Date(),
