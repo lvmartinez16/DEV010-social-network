@@ -4,7 +4,7 @@ import {
 }
   from 'firebase/firestore';
 // eslint-disable-next-line import/named
-import { refPost } from './firebase';
+import { refPost, borrarPost } from './firebase';
 
 export const obtenerPosts = () => {
   const sectionPost = document.createElement('section');
@@ -18,7 +18,22 @@ export const obtenerPosts = () => {
 
       post.id = doc.id;
       sectionPost.innerHTML += `<div class="card-db">
-      <div class="div-post"><a class="text-data">${post.text}</a> </div>   </div>`;
+      <div class="div-post"><a class="text-data">${post.text}</a> </div>  
+      <button class="btn-post" id="delete-post" "${post.id}">Eliminar</img>
+      </button> </div>`;
+    });
+    const btnDelete = document.querySelectorAll('.btn-post');
+    btnDelete.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        console.log('click eliminar', e.target.dataset.id);
+        const postId = e.target.dataset.id;
+        borrarPost(postId)
+          .then(() => {
+            console.log('Se elimino el ID:', postId);
+          })
+          .catch(() => {
+          });
+      });
     });
   });
 

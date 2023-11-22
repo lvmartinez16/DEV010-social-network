@@ -16,14 +16,16 @@ function wall() {
   const crearPost = document.createElement('input');
   crearPost.id = 'crearPost';
   crearPost.placeholder = 'Escribe aquí tu post';
+
   const btnPost = document.createElement('button');
   btnPost.innerText = 'Enviar';
   btnPost.id = 'btnPost';
   const postCreado = document.createElement('div');
   postCreado.id = 'sesionPost';
+
   divContenedor.append(crearPost, btnPost, postCreado);
   sectionW.appendChild(divContenedor);
-
+  document.addEventListener('DOMContentLoaded', () => { console.log('DOM'); });
   btnPost.addEventListener('click', () => {
     const newPost = {
       date: new Date(),
@@ -32,7 +34,7 @@ function wall() {
 
     createPost(newPost)
       .then(() => {
-        sectionW.innerHTML = ' ';
+      //  sectionW.innerHTML = ' ';
         crearPost.value = '';
         obtenerPosts();
       })

@@ -3,7 +3,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import {
-  getFirestore, collection, addDoc, query,
+  getFirestore, collection, addDoc, query, doc, deleteDoc,
 } from 'firebase/firestore';
 
 const provider = new GoogleAuthProvider();
@@ -34,3 +34,5 @@ export const refPost = () => query(collection(db, 'post'));
 export const createPost = (obj) => addDoc(collection(db, 'post'), {
   ...obj,
 });
+
+export const borrarPost = (postId) => deleteDoc(doc(db, 'post', postId));

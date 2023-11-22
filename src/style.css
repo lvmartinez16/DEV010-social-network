@@ -179,6 +179,45 @@ p {
     transform: translate(30px, 10px);
 }
 
+
+
+#container-post {
+    display: grid;
+}
+
+.btn-post {
+    color: #fff;
+    display: inline;
+    background-color: #ee7474;
+    border: solid #ee7474 1px;
+    border-radius: 10px;
+    height: 34px;
+    font-size: 12px;
+    font-weight: 500;
+    width: 150px;
+    margin: 5px;
+}
+
+.card-db {
+    border: solid #000000 1px;
+    border-radius: 10px;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.text-data {
+    font-size: 12px;
+}
+
+.div-post {
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 5px;
+    height: auto;
+    padding: 10px;
+}
 @media screen and (max-width: 640px) {
 
     .column {
