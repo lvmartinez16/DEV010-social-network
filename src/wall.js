@@ -9,10 +9,6 @@ function wall() {
   const divContenedor = document.createElement('div');
   divContenedor.setAttribute('class', 'contenedorWall');
 
-  const btnCerrar = document.createElement('button');
-  btnCerrar.id = 'btnSalir';
-  btnCerrar.textContent = 'salir';
-
   const crearPost = document.createElement('input');
   crearPost.id = 'crearPost';
   crearPost.placeholder = 'Escribe aquí tu post';
@@ -33,7 +29,7 @@ function wall() {
 
     createPost(newPost)
       .then(() => {
-      //  sectionW.innerHTML = ' ';
+        //  sectionW.innerHTML = ' ';
         crearPost.value = '';
         obtenerPosts();
       })
