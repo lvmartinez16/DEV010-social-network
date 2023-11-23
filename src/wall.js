@@ -25,6 +25,7 @@ function wall() {
     const newPost = {
       date: new Date(),
       text: crearPost.value,
+     
     };
 
     createPost(newPost)
