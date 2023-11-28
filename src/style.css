@@ -5,11 +5,11 @@ body{
 .sectionH {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;  
+    /* align items elementos secundario se alineara verticalmente en el centro del contenedor  */
     width: 100%;
     min-height: 100vh;
     background: url(FONDO.jpg) no-repeat;
-    /* opacity: 50%; */
     background-position: center;
     background-size: cover;
 }
@@ -24,24 +24,14 @@ body{
 }
 
 
-#sesionPost {
-    margin: 1rem 1rem;
-    font-size: 0.8rem;
-    border-radius: 1rem;
-    background-color: rgba(0, 179, 255, 0.062);
-
-}
-
 
 /* se agrega un cuadro blanco de fondo para resaltar la parte del inico  */
 .contenedor {
     position: relative;
     width: 450px;
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px); /* filtro de desenfoque con un radio de 30 píxeles */
     height: 300px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+   
 }
 
 .contenedorWall {
@@ -49,6 +39,7 @@ body{
     margin: 10px;
     justify-content: center;
     align-items: center;
+    /* alineara verticalmente en el centro del contenedor   */
 }
 
 /* damos diseño a nuestro titulo  */
@@ -61,54 +52,6 @@ body{
 }
 
 
-.input-contenedor {
-
-    position: relative;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #fcf7f7;
-}
-
-
-.input-contenedor input:focus~label,
-.input-contenedor input:valid~label {
-    top: -15px;
-    font-size: 0.85rem;
-    /* Cambiar el tamaño del texto cuando desplace hacia arriba */
-    color: hsl(0, 0%, 100%);
-    /* Cambiar el color del texto cuando se desplace hacia arriba */
-}
-
-.input-contenedor label {
-    position: absolute;
-    top: 15px;
-    left: 0;
-    font-size: 1rem;
-    color: #fff;
-    pointer-events: none;
-    /* Evitar que el label interfiera con la interacción del input */
-    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
-    /* Animación suave */
-}
-
-.input-contenedor input {
-    width: 100%;
-    height: 50%;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    padding: 30px 0 20px;
-    color: #fff;
-}
-
-.input-contenedor i {
-    position: absolute;
-    color: #fff;
-    font-size: 1.6rem;
-    top: 32px;
-    right: 5px;
-}
-
 .buttonGoogle {
     margin-left: 26%;
     height: 40px;
@@ -117,8 +60,6 @@ body{
     border: none;
     font-weight: bold;
     cursor: pointer;
-    /* font-size: 1rem; */
-    /* transition: .4s; */
     align-items: center;
 }
 
@@ -140,7 +81,7 @@ button:hover {
     /* Ajusta el tamaño de la imagen según tus preferencias */
     margin-right: 5px;
     /* Espacio entre la imagen y el texto */
-    /* margin-left: 13px; */
+  
 }
 
 .pagina2 {
