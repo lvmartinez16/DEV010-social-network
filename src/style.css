@@ -167,7 +167,7 @@ h6 {
 #btnPost {
 
     height: 38px;
-    background: #ee7474;
+    background: #c27024;
     border: none;
     margin: 2rem;
     padding: 0.6rem 1rem;
@@ -203,8 +203,8 @@ h6 {
 .btn-post {
     color: #fff;
     display: inline;
-    background-color: #ee7474;
-    border: solid #ee7474 1px;
+    background-color: #c27024;
+    border: solid #c27024 1px;
     border-radius: 10px;
     height: 34px;
     font-size: 12px;
