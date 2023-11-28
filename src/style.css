@@ -73,7 +73,7 @@ body{
 .input-contenedor input:valid~label {
     top: -15px;
     font-size: 0.85rem;
-    /* Cambiar el tamaño del texto cuando se desplace hacia arriba */
+    /* Cambiar el tamaño del texto cuando desplace hacia arriba */
     color: hsl(0, 0%, 100%);
     /* Cambiar el color del texto cuando se desplace hacia arriba */
 }
